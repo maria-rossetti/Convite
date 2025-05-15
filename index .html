@@ -1,0 +1,74 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <style>
+        body {
+            background-color: #F0F8FF;
+            /* Verde claro */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        #sim {
+            background-color: red;
+            color: white;
+        }
+        #nao {
+            background-color: red;
+            color: white;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você quer namorar comigo?? :)</h1>
+    <div class="buttons">
+        <button id="sim" onclick="window.location.href = 'namorados.html';">Sim</button>
+        <button id="nao" onclick="moveNao()">Não</button>
+    </div>
+
+    <script>
+        let posX = 0;
+        let posY = 0;
+
+        function moveNao() {
+            const buttonNao = document.getElementById("nao");
+            const maxWidth = window.innerWidth - buttonNao.offsetWidth;
+            const maxHeight = window.innerHeight - buttonNao.offsetHeight;
+
+            posX = Math.floor(Math.random() * maxWidth);
+            posY = Math.floor(Math.random() * maxHeight);
+
+            buttonNao.style.position = 'absolute';
+            buttonNao.style.left = posX + 'px';
+            buttonNao.style.top = posY + 'px';
+        }
+    </script>
+</body>
+</html>
